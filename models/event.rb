@@ -24,6 +24,10 @@ class Event
       return Event.map_item( sql )
   end
 
+  def results
+    @ranking = @athletes.shuffle
+  end
+
   def self.all()
     sql = "SELECT * FROM events"
     return Event.map_items( sql )
@@ -59,13 +63,6 @@ class Event
   end
 
 end
-
-
-
-# def athletes()
-#   sql = "SELECT * FROM athletes WHERE nation_id = #{ @id }"
-#   return Athlete.map_items( sql )
-# end
 
 
 
