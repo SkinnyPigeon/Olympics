@@ -34,14 +34,16 @@ class Event
     
     @ranking << @athletes.shuffle
     @ranking.flatten!
+    position = @ranking.length
 
     @ranking.each do |athlete|
-      position = @ranking.length
+      
 
       sql = "UPDATE athletes_events SET position_id = '#{position}' WHERE athlete_id = '#{athlete.id}'"
       run_sql( sql )
 
-      @ranking.pop
+      position -=1
+
     end
   end
 
