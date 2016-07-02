@@ -24,18 +24,21 @@ class Event
       return Event.map_item( sql )
   end
 
-  def position
-    position = @ranking.length
-    return position
-  end
+  # def position
+  #   position = @ranking.length
+  #   return position
+  # end
 
   def results
+
+    
     @ranking << @athletes.shuffle
     @ranking.flatten!
-    @ranking.each do |athlete|
-      finish_position = position
 
-      sql = "UPDATE athletes_events SET position_id = '#{finish_position}' WHERE athlete_id = '#{athlete.id}'"
+    @ranking.each do |athlete|
+      position = @ranking.length
+
+      sql = "UPDATE athletes_events SET position_id = '#{position}' WHERE athlete_id = '#{athlete.id}'"
       run_sql( sql )
 
       @ranking.pop
