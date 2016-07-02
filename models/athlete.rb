@@ -8,13 +8,13 @@ class Athlete
   def initialize( options )
     @name = options['name']
     @id = options['id'].to_i
-    @nation_id = options['nation_id']
+    @nation_id = options['nation_id'].to_i
     @medals = []
   end
 
 
   def save()
-    sql = "INSERT INTO athletes ( name ) VALUES ('#{@name}') RETURNING *"
+    sql = "INSERT INTO athletes ( name, nation_id ) VALUES ('#{ @name }', '#{ @nation_id }') RETURNING *"
     return Athlete.map_item( sql )
   end
 
@@ -46,8 +46,7 @@ class Athlete
 
   def self.update( options )
     sql = "UPDATE athletes SET 
-          name='#{ options[ 'name' ]}',
-          nation_id='#{ options[ 'nation_id' ]}'
+          name='#{ options[ 'name' ]}'
           WHERE id='#{ options[ 'id' ]}' 
           "
     run_sql( sql )
