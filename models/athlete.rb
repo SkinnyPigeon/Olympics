@@ -45,9 +45,14 @@ class Athlete
         @silver += 1
       when finishing_position == "3"
         @bronze += 1
-      else
-        return
       end
+      sql = "UPDATE athletes SET 
+      gold='#{@gold}', 
+      silver = '#{@silver}', 
+      bronze = '#{@bronze}'
+      WHERE id='#{@id}' 
+      "
+      run_sql( sql )
     end
   end
 

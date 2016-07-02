@@ -12,7 +12,10 @@ CREATE TABLE nations (
 CREATE TABLE athletes (
   id SERIAL4 primary key,
   name VARCHAR(255),
-  nation_id INT4 references nations(id)
+  nation_id INT4 references nations(id),
+  gold INT2,
+  silver INT2,
+  bronze INT2
 );
 
 CREATE TABLE events (
