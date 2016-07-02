@@ -30,20 +30,16 @@ class Event
   # end
 
   def results
-
-    
+ 
     @ranking << @athletes.shuffle
     @ranking.flatten!
     position = @ranking.length
 
-    @ranking.each do |athlete|
-      
+    @ranking.each do |athlete|  
+      sql = "UPDATE athletes_events SET position_id = '#{position}' WHERE athlete_id = '#{athlete.id}' AND event_id = '#{@id}'"
 
-      sql = "UPDATE athletes_events SET position_id = '#{position}' WHERE athlete_id = '#{athlete.id}'"
       run_sql( sql )
-
       position -=1
-
     end
   end
 

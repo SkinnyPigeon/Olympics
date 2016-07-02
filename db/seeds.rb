@@ -32,5 +32,5 @@ cross_country_wrestling.enter_athletes(john)
 bum_fights.results
 cross_country_wrestling.results
 
-binding.pry
+# binding.pry
 nil
