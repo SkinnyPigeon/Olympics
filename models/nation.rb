@@ -1,5 +1,6 @@
 require('pry-byebug')
 require_relative('../db/sql_runner')
+require_relative('athlete')
 
 class Nation
 
@@ -15,6 +16,10 @@ class Nation
     sql = "INSERT INTO nations ( name ) VALUES ('#{@name}') RETURNING *"
     return Nation.map_item( sql )
   end
+
+  # def total_points
+    
+  # end
 
   def athletes()
     sql = "SELECT * FROM athletes WHERE nation_id = #{ @id }"

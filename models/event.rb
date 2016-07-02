@@ -25,7 +25,6 @@ class Event
   end
 
   def results
- 
     @ranking << @athletes.shuffle
     @ranking.flatten!
     position = @ranking.length
