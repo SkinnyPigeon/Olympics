@@ -43,6 +43,14 @@ class Nation
     return Nation.map_item( sql )
   end
 
+  def self.update( options )
+    sql = "UPDATE nations SET 
+          name='#{ options[ 'name' ]}'
+          WHERE id='#{ options[ 'id' ]}' 
+          "
+    run_sql( sql )
+  end
+
 end
 
 
