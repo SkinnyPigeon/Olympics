@@ -11,11 +11,12 @@ class LeaderBoard
 
   def build
     result = @nations.map { |nation| {nation.total_points => nation.name} }
-    sorted = result.sort_by {|nation| nation[:total_points]}
+    sorted = result.sort_by {|points| points.keys[0]}
     return sorted.reverse
   end
 
-
+  # my_hash = {'a'=>'1', 'c'=>'3', 'b'=>'2'}
+  # my_hash.keys.sort.each { |key| puts my_hash[key] }
 
 
 end
