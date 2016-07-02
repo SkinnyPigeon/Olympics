@@ -14,6 +14,8 @@ jeff = Athlete.new( "name" => "jeff", "nation_id" => scotland.id ).save
 steve = Athlete.new( "name" => "steve", "nation_id" => spain.id ).save
 bob = Athlete.new( "name" => "bob", "nation_id" => spain.id ).save
 
+athletes=[jeff,steve,bob]
+
 bum_fights = Event.new( "name" => "bum fights").save
 
 binding.pry

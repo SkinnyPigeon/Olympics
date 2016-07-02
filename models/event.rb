@@ -1,5 +1,6 @@
 require('pry-byebug')
 require_relative('../db/sql_runner')
+require_relative('athlete')
 
 class Event
 
@@ -15,6 +16,12 @@ class Event
   def save()
     sql = "INSERT INTO events ( name ) VALUES ('#{@name }') RETURNING *"
     return Event.map_item( sql )
+  end
+
+  def enter_athletes( athlete )
+    @athletes << athlete
+      sql = "INSERT INTO athletes_events ( event_id, athlete_id ) VALUES ('#{@id}', '#{athlete.id}') RETURNING *"
+      return Event.map_item( sql )
   end
 
   def self.all()
