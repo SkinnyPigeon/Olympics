@@ -24,11 +24,6 @@ class Event
       return Event.map_item( sql )
   end
 
-  # def position
-  #   position = @ranking.length
-  #   return position
-  # end
-
   def results
  
     @ranking << @athletes.shuffle
@@ -84,7 +79,8 @@ end
 
 
 
-# WHERE '#{@id}' = '#{athlete.id}'
+
+
 
 
 
