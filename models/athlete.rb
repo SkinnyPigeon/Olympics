@@ -1,0 +1,71 @@
+require('pry-byebug')
+require_relative('../db/sql_runner')
+
+class Athlete
+
+  attr_reader( :name, :id, :medals, :nation_id )
+
+  def initialize( options )
+    @name = options['name']
+    @id = options['id'].to_i
+    @nation_id = options['nation_id']
+    @medals = []
+  end
+
+
+  def save()
+    sql = "INSERT INTO athletes ( name ) VALUES ('#{@name}') RETURNING *"
+    return Athlete.map_item( sql )
+  end
+
+  def self.all()
+    sql = "SELECT * FROM athletes"
+    return Athlete.map_items( sql )
+  end
+
+  def self.delete_all()
+    sql = "DELETE FROM athletes"
+    run_sql( sql )
+  end
+
+  def self.map_items( sql )
+    athlete = run_sql( sql )
+    result = athlete.map { |product| Athlete.new( product ) }
+    return result
+  end
+
+  def self.map_item( sql )
+    result = Athlete.map_items( sql )
+    return result.first
+  end
+
+  def self.find( id )
+    sql = "SELECT * FROM athletes WHERE id = #{id}"
+    return Athlete.map_item( sql )
+  end
+
+  def self.update( options )
+    sql = "UPDATE athletes SET 
+          name='#{ options[ 'name' ]}',
+          nation_id='#{ options[ 'nation_id' ]}'
+          WHERE id='#{ options[ 'id' ]}' 
+          "
+    run_sql( sql )
+  end
+
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
