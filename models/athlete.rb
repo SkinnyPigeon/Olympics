@@ -23,6 +23,14 @@ class Athlete
     return Nation.map_item( sql )
   end
 
+  def award_medals
+    sql = "SELECT * FROM athletes_events WHERE athlete_id = '#{@id}'"
+    result = run_sql( sql )
+    @medals << result
+    position = @medals.map { |medal| medal.position_id }
+    return position
+  end
+
   def self.all()
     sql = "SELECT * FROM athletes"
     return Athlete.map_items( sql )

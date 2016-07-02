@@ -6,6 +6,4 @@ class Medal
     @type = options[ 'type' ]
   end
 
-  
-
 end
