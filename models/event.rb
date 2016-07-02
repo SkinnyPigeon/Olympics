@@ -30,11 +30,12 @@ class Event
   end
 
   def results
-    @ranking = @athletes.shuffle
+    @ranking << @athletes.shuffle
+    @ranking.flatten!
     @ranking.each do |athlete|
-      position = athlete.position
+      finish_position = position
       @ranking.pop
-      sql = "UPDATE athletes_events SET position_id = '#{position}' WHERE athlete.id = #{@id}"
+      sql = "UPDATE athletes_events SET position_id = '#{finish_position}'"
       run_sql( sql )
     end
   end
