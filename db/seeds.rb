@@ -10,6 +10,7 @@ spain = Nation.new( "name" => "spain" ).save
 
 jeff = Athlete.new( "name" => "jeff", "nation_id" => scotland.id ).save
 steve = Athlete.new( "name" => "steve", "nation_id" => spain.id ).save
+bob = Athlete.new( "name" => "bob", "nation_id" => spain.id ).save
 
 binding.pry
 nil

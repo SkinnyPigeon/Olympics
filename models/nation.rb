@@ -11,10 +11,14 @@ class Nation
     @points = 0
   end
 
-
   def save()
     sql = "INSERT INTO nations ( name ) VALUES ('#{@name}') RETURNING *"
     return Nation.map_item( sql )
+  end
+
+  def athletes()
+    sql = "SELECT * FROM athletes WHERE nation_id = #{ @id }"
+    return Athlete.map_items( sql )
   end
 
   def self.all()

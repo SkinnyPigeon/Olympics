@@ -1,5 +1,6 @@
 require('pry-byebug')
 require_relative('../db/sql_runner')
+require_relative('nation')
 
 class Athlete
 
@@ -12,10 +13,14 @@ class Athlete
     @medals = []
   end
 
-
   def save()
     sql = "INSERT INTO athletes ( name, nation_id ) VALUES ('#{ @name }', '#{ @nation_id }') RETURNING *"
     return Athlete.map_item( sql )
+  end
+
+  def nation()
+    sql = "SELECT * FROM nations WHERE id = #{ @nation_id }"
+    return Nation.map_item( sql )
   end
 
   def self.all()
