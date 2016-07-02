@@ -4,12 +4,13 @@ require_relative('nation')
 
 class Athlete
 
-  attr_reader( :name, :id, :medals, :nation_id )
+  attr_reader( :name, :id, :medals, :nation_id, :results )
 
   def initialize( options )
     @name = options['name']
     @id = options['id'].to_i
     @nation_id = options['nation_id'].to_i
+    @results = []
     @medals = []
   end
 
@@ -26,9 +27,10 @@ class Athlete
   def award_medals
     sql = "SELECT * FROM athletes_events WHERE athlete_id = '#{@id}'"
     result = run_sql( sql )
-    @medals << result
-    position = @medals.map { |medal| medal.position_id }
-    return position
+    @results << result
+    position = @results.first.map { |medal| medal['position_id'] }
+    @medals << position
+    @medals.flatten!
   end
 
   def self.all()
