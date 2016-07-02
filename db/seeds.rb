@@ -45,6 +45,7 @@ steve.convert_medals
 bob.convert_medals
 john.convert_medals
 
+board.show_scores
 
 binding.pry
 nil

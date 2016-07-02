@@ -7,16 +7,23 @@ class LeaderBoard
 
   def initialize( nations )
     @nations = nations
+    @sorted = []
   end
 
   def build
     result = @nations.map { |nation| {nation.total_points => nation.name} }
-    sorted = result.sort_by {|points| points.keys[0]}
-    return sorted.reverse
+    @sorted = result.sort_by {|points| points.keys[0]}
+    return @sorted.reverse!
   end
 
-  # my_hash = {'a'=>'1', 'c'=>'3', 'b'=>'2'}
-  # my_hash.keys.sort.each { |key| puts my_hash[key] }
+  def show_scores
+    build
+    puts
+    for team in @sorted
+      print "#{team.values.join(" ").capitalize} has #{team.keys.join(" ")} points"
+      puts
+    end
+  end
 
 
 end
