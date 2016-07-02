@@ -17,9 +17,22 @@ class Nation
     return Nation.map_item( sql )
   end
 
-  # def total_points
-    
-  # end
+  def total_points
+
+    sql = "SELECT SUM(gold) FROM athletes WHERE nation_id = '#{@id}'"
+    result = run_sql( sql )
+    @points += ( result.first['sum'].to_i * 5 )
+
+    sql = "SELECT SUM(silver) FROM athletes WHERE nation_id = '#{@id}'"
+    result = run_sql( sql )
+    @points += ( result.first['sum'].to_i * 3 )
+
+    sql = "SELECT SUM(bronze) FROM athletes WHERE nation_id = '#{@id}'"
+    result = run_sql( sql )
+    @points += ( result.first['sum'].to_i * 1 )
+
+  end
+
 
   def athletes()
     sql = "SELECT * FROM athletes WHERE nation_id = #{ @id }"

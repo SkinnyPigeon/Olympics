@@ -43,6 +43,6 @@ bob.convert_medals
 john.convert_medals
 
 
-
+# spain.total_points
 binding.pry
 nil
