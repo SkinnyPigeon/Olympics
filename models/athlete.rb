@@ -4,14 +4,17 @@ require_relative('nation')
 
 class Athlete
 
-  attr_reader( :name, :id, :medals, :nation_id, :results )
+  attr_reader( :name, :id, :finishing_positions, :nation_id, :results, :gold, :silver, :bronze )
 
   def initialize( options )
     @name = options['name']
     @id = options['id'].to_i
     @nation_id = options['nation_id'].to_i
     @results = []
-    @medals = []
+    @finishing_positions = []
+    @gold = 0
+    @silver = 0
+    @bronze = 0
   end
 
   def save()
@@ -29,8 +32,23 @@ class Athlete
     result = run_sql( sql )
     @results << result
     position = @results.first.map { |medal| medal['position_id'] }
-    @medals << position
-    @medals.flatten!
+    @finishing_positions << position
+    @finishing_positions.flatten!
+  end
+
+  def convert_medals
+    @finishing_positions.each do |finishing_position|
+      case 
+      when finishing_position == "1"
+        @gold += 1
+      when finishing_position == "2"
+        @silver += 1
+      when finishing_position == "3"
+        @bronze += 1
+      else
+        return
+      end
+    end
   end
 
   def self.all()
