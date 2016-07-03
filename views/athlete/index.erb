@@ -1,0 +1,12 @@
+<a href="/athlete/new">Add a new athlete</a><br>
+
+<% @athletes.each do |athlete| %>
+  <a href="/athlete/<%= athlete.id%>"><%= athlete.name %>
+  </a><br>
+  <a href="/athlete/<%=athlete.id%>/edit">Edit Athlete</a>
+  <br>
+  <hr>
+<% end %>
+<
+  <a href="/nation">Nation Index</a>
+

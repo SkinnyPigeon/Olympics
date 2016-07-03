@@ -1,0 +1,21 @@
+<h2>Add Athlete</h2>
+
+<form action="/athlete" method="post">
+
+  <label for="name">Please enter athlete:</label>
+  <input type="text" name="name"><br>
+
+  <label for="name">Country: </label>
+  <select name="nation_id">
+
+    <% @nations.each do |nation| %>
+    <option value="<%= nation.id%>"><%= nation.name %></option>
+    <% end %> 
+  </select>
+
+  <br>
+  <br>
+
+  <input type='submit' value="Add Athlete!">
+</form>
+
