@@ -1,0 +1,18 @@
+<h2><%= @event.name%></h2>
+
+<form action="/event/<%= @event.id%>/add_athlete" method="post">
+
+
+  <label for="name">Athlete: </label>
+  <select name="@event.name">
+
+    <% @athletes.each do |athlete| %>
+    <option value="<%= athlete.id%>"><%= athlete.name %></option>
+    <% end %> 
+  </select>
+
+  <br>
+  <br>
+
+  <input type='submit' value="Add Athlete!">
+</form>

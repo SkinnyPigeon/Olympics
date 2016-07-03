@@ -1,0 +1,10 @@
+<h1>Please fix this event's name</h1>
+
+<form action="/event/<%= @event.id%>" method="post">
+  <label for="name">Name: </label>
+  <input type="text" name="name" value="<%= @event.name%>">
+
+  
+
+  <input type="submit" value="Update">
+</form>
