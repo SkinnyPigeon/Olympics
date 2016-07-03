@@ -1,17 +1,9 @@
-<h2>Add Athlete</h2>
+<h2>Add Event</h2>
 
 <form action="/event" method="post">
 
   <label for="name">Please enter event:</label>
   <input type="text" name="name"><br>
-
-  <label for="name">Athlete: </label>
-  <select name="nation_id">
-
-    <% @athletes.each do |athlete| %>
-    <option value="<%= athlete.id%>"><%= athlete.name %></option>
-    <% end %> 
-  </select>
 
   <br>
   <br>

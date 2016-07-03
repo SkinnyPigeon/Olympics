@@ -8,7 +8,8 @@
 
     <% @athletes.each do |athlete| %>
     <option value="<%= athlete.id%>"><%= athlete.name %></option>
-    <% end %> 
+    <% end %>
+    <% @event.enter_athletes(athlete) %> 
   </select>
 
   <br>

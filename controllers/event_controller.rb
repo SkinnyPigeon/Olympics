@@ -39,8 +39,18 @@ get '/event/:id/add_athlete' do
   erb( :'event/add_athlete')
 end
 
+
 #update
 post '/event/:id' do
   @event = Event.update( params )
   redirect to( "/event/#{ params[:id] }")
 end
+
+
+
+
+
+
+
+
+
