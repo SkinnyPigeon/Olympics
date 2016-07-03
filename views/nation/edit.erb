@@ -1,0 +1,9 @@
+<h1>Please fix this country's name</h1>
+
+<form action="/nation/<%= @nation.id%>" method="post">
+  <label for="name">Name: </label>
+  <input type="text" name="name" value="<%= @nation.name%>">
+
+  <input type="submit" value="Update">
+</form>
+
