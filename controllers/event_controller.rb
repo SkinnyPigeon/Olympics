@@ -23,6 +23,7 @@ end
 #show
 get '/event/:id' do
   @event = Event.find( params[:id] )
+  @event.populate_with_athletes
   erb(:'event/show')
 end
 
@@ -50,7 +51,7 @@ end
 post '/event/:id/result' do
   event = Event.find(params[:id])
   event.results
-  binding.pry
+  event.athletes.each { |athlete| athlete.award_medals}
   event.athletes.each { |athlete| athlete.convert_medals}
   redirect to("/leaderboard")
 end

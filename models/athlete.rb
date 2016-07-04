@@ -28,7 +28,7 @@ class Athlete
   end
 
   def award_medals
-    sql = "SELECT * FROM athletes_events WHERE athlete_id = '#{@id}'"
+    sql = "SELECT * FROM athletes_events WHERE athlete_id = #{@id}"
     result = run_sql( sql )
     @results << result
     position = @results.first.map { |medal| medal['position_id'] }
@@ -37,14 +37,13 @@ class Athlete
   end
 
   def convert_medals
-    award_medals
     @finishing_positions.each do |finishing_position|
-      case 
-      when finishing_position == "1"
+      case finishing_position
+      when "1"
         @gold += 1
-      when finishing_position == "2"
+      when "2"
         @silver += 1
-      when finishing_position == "3"
+      when "3"
         @bronze += 1
       end
       sql = "UPDATE athletes SET 
