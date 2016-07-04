@@ -25,21 +25,16 @@ class Event
   end
 
   def results
-    sql = "select * from athletes inner join athletes_events on event_id = #{@id};"
+    sql = "SELECT athletes.* FROM athletes INNER JOIN athletes_events ON athletes_events.athlete_id = athletes.id WHERE athletes_events.event_id = #{@id}"
     results = run_sql( sql )
-
     @athletes = results.map { |result| Athlete.new( result ) }
-
-    @ranking << @athletes.shuffle
-    @ranking.flatten!
+    #create a loop for that
+    @ranking + @athletes.shuffle
     position = @ranking.length
 
-    binding.pry
-    nil
     @ranking.each do |athlete|  
-      sql = "UPDATE athletes_events SET position_id = '#{position}' WHERE athlete_id = '#{athlete.id}' AND event_id = '#{@id}'"
-    binding.pry
-    nil
+      sql = "UPDATE athletes_events SET position_id = #{position} WHERE athlete_id = #{athlete.id} AND event_id = #{@id}"
+
       run_sql( sql )
       position -=1
     end
