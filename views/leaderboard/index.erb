@@ -1,7 +1,23 @@
 <h1>Leaderboard</h1>
-<h3><%=@leaders%></h3>
 
-<a href="/athlete">Athlete Index</a>
-<a href="/event">Event Index</a>
-<a href="/nation">Nation Index</a>
-<a href="/leaderboard">Leaderboard</a>
+
+
+<div id="teams">
+  <% @teams.each do |team| %>
+  <%= team %> <br>
+  <% end %>
+</div>
+
+
+<div id="scores">
+  <% @scores.each do |score| %>
+  <%= score  %> <br>
+  <% end %>
+</div>
+
+<div class="links">
+  <a href="/athlete">Athlete Index</a>
+  <a href="/event">Event Index</a>
+  <a href="/nation">Nation Index</a>
+  <a href="/leaderboard">Leaderboard</a>
+</div>

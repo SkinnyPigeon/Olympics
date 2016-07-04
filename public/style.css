@@ -1,10 +1,25 @@
 body {
   font-family: monospace;
-  padding-left: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 a {
   text-decoration: none;
-  padding-left: 0px;
-  margin-left: 20px;
+}
+
+#scores {
+  float: left;
+  display: block;
+}
+
+
+#teams {
+  float: left;
+  display: inline-block;
+}
+
+.links {
+  margin-top: 400px;
+
 }

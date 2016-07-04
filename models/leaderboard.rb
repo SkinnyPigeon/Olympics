@@ -3,11 +3,13 @@ require('pry-byebug')
 
 class LeaderBoard
 
-  attr_reader( :nations )
+  attr_reader( :nations, :name, :score )
 
   def initialize( nations )
     @nations = nations
     @sorted = []
+    @name = nil
+    @score = nil
   end
 
   def build
@@ -20,6 +22,9 @@ class LeaderBoard
     build
     puts
     for team in @sorted
+      @name = team.values.join(" ").capitalize
+      @score = team.keys.join(" ")
+      # binding.pry
       print "#{team.values.join(" ").capitalize} has #{team.keys.join(" ")} points"
       puts
     end
