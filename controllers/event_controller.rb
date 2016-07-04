@@ -50,6 +50,7 @@ end
 post '/event/:id/result' do
   event = Event.find(params[:id])
   event.results
+  event.athletes.each { |athlete| athlete.convert_medals}
   binding.pry
   redirect to("/leaderboard")
 end
