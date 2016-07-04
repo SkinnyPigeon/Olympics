@@ -19,7 +19,6 @@ class Event
   end
 
   def enter_athletes( athlete )
-    binding.pry
     @athletes << athlete
       sql = "INSERT INTO athletes_events ( event_id, athlete_id ) VALUES (#{@id}, #{athlete.id}) RETURNING *"
       return Event.map_item( sql )
