@@ -3,6 +3,9 @@
 <br>
 <br>
 
+<h1>Athletes: </h1>
+<h3><%=@event.athletes%></h3>
+
 <form action="/event/<%= @event.id%>/result" method="post">
   <label for="Update"> Result: </label>
   <input type="submit" value="Update">

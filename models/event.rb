@@ -40,6 +40,13 @@ class Event
     end
   end
 
+  def athletes
+    sql = "SELECT athletes.name FROM athletes INNER JOIN athletes_events ON athletes_events.athlete_id = athletes.id WHERE athletes_events.event_id = #{@id}"
+    results = run_sql( sql )
+    athletes = results.map { |result| Athlete.new( result ) }
+    athletes.each { |athlete| puts athlete.name }
+  end
+
   def self.all()
     sql = "SELECT * FROM events"
     return Event.map_items( sql )
