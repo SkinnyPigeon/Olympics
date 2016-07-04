@@ -44,7 +44,8 @@ class Event
     sql = "SELECT athletes.name FROM athletes INNER JOIN athletes_events ON athletes_events.athlete_id = athletes.id WHERE athletes_events.event_id = #{@id}"
     results = run_sql( sql )
     athletes = results.map { |result| Athlete.new( result ) }
-    athletes.each { |athlete| puts athlete.name }
+    # binding.pry
+    athletes.each { |athlete| athlete.name }
   end
 
   def self.all()

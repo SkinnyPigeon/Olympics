@@ -4,7 +4,10 @@
 <br>
 
 <h1>Athletes: </h1>
-<h3><%=@event.athletes%></h3>
+<%@event.athletes.each do |athlete|%>
+<%=athlete.name%>
+<br>
+<%end%>
 
 <form action="/event/<%= @event.id%>/result" method="post">
   <label for="Update"> Result: </label>
@@ -15,3 +18,4 @@
 <a href="/event/new">Add Another Event</a>
 <a href="/event">Event Index</a>
 <a href="/event/<%=@event.id%>/edit">Edit Event</a>
+<a href="/leaderboard">Leaderboard</a>
