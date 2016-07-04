@@ -1,15 +1,13 @@
-<a href="/athlete/new">Add a new athlete</a><br>
-
 <% @athletes.each do |athlete| %>
-  <a href="/athlete/<%= athlete.id%>"><%= athlete.name %>
-  </a><br>
-  <a href="/athlete/<%=athlete.id%>/edit">Edit Athlete</a>
-  <br>
-  <hr>
+<a href="/athlete/<%= athlete.id%>"><%= athlete.name %>
+</a>
+<br>
+<hr>
 <% end %>
 <
- <a href="/athlete">Athlete Index</a>
- <a href="/event">Event Index</a>
- <a href="/nation">Nation Index</a>
- <a href="/leaderboard">Leaderboard</a>
+<a href="/athlete/new">Add a new athlete</a>
+<a href="/athlete">Athlete Index</a>
+<a href="/event">Event Index</a>
+<a href="/nation">Nation Index</a>
+<a href="/leaderboard">Leaderboard</a>
 

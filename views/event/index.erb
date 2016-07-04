@@ -1,13 +1,11 @@
-<a href="/event/new">Add a new event</a><br>
-
 <% @events.each do |event| %>
   <a href="/event/<%= event.id%>"><%= event.name %>
-  </a><br>
-  <a href="/event/<%=event.id%>/edit">Edit Event</a>
-  <br>
+  </a>
   <hr>
 <% end %>
-<
+<br>
+
+<a href="/event/new">Add a new event</a>
 <a href="/athlete">Athlete Index</a>
 <a href="/event">Event Index</a>
 <a href="/nation">Nation Index</a>

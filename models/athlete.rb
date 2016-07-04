@@ -4,7 +4,7 @@ require_relative('nation')
 
 class Athlete
 
-  attr_reader( :name, :id, :finishing_positions, :nation_id, :results, :gold, :silver, :bronze )
+  attr_reader( :name, :id, :finishing_positions, :nation_id, :results, :gold, :silver, :bronze, :nation )
 
   def initialize( options )
     @name = options['name']
@@ -15,6 +15,7 @@ class Athlete
     @gold = 0
     @silver = 0
     @bronze = 0
+    @nation = nil
   end
 
   def save()
@@ -24,7 +25,7 @@ class Athlete
 
   def nation()
     sql = "SELECT * FROM nations WHERE id = #{ @nation_id }"
-    return Nation.map_item( sql )
+    @nation = Nation.map_item( sql )
   end
 
   def award_medals

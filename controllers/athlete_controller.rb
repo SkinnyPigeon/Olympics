@@ -23,6 +23,9 @@ end
 #show
 get '/athlete/:id' do
   @athlete = Athlete.find( params[:id] )
+  @athlete.award_medals
+  @athlete.convert_medals
+  # binding.pry
   erb(:'athlete/show')
 end
 

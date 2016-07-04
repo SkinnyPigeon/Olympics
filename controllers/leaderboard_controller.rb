@@ -5,5 +5,6 @@ require_relative('../models/leaderboard')
 get '/leaderboard' do
   nations = Nation.all
   @board=LeaderBoard.new( nations )
+  @leaders = @board.show_scores
   erb(:'leaderboard/index')
 end
