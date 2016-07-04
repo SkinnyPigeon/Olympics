@@ -47,6 +47,13 @@ post '/event/:id/add_athlete' do
   redirect to("/event/#{ params[:id] }/add_athlete")
 end
 
+post '/event/:id/result' do
+  event = Event.find(params[:id])
+  event.results
+  binding.pry
+  redirect to("/leaderboard")
+end
+
 #update
 post '/event/:id' do
   @event = Event.update( params )

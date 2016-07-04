@@ -25,6 +25,11 @@ class Event
   end
 
   def results
+    sql = "select * from athletes inner join athletes_events on event_id = #{@id};"
+    results = run_sql( sql )
+
+    @athletes = results.map { |result| Athlete.new( result ) }
+
     @ranking << @athletes.shuffle
     @ranking.flatten!
     position = @ranking.length

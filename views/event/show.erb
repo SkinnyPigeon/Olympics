@@ -1,15 +1,12 @@
 <h1>Event</h1>
 <%=@event.name%> 
 <br>
-<br>>
+<br>
 
-
-
-<label for="name">Result: 
-  <% @event.results %>
-</label>
-
-
+<form action="/event/<%= @event.id%>/result" method="post">
+  <label for="Update"> Result: </label>
+  <input type="submit" value="Update">
+</form>
 
 <a href="/event/<%=@event.id%>/add_athlete">Add An Athlete</a>
 <a href="/event/new">Add Another Event</a>
