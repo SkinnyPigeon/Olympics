@@ -36,11 +36,6 @@ cross_country_wrestling.enter_athletes(john)
 bum_fights.results
 cross_country_wrestling.results
 
-jeff.award_medals
-steve.award_medals
-bob.award_medals
-john.award_medals
-
 jeff.convert_medals
 steve.convert_medals
 bob.convert_medals

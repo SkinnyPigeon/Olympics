@@ -37,6 +37,7 @@ class Athlete
   end
 
   def convert_medals
+    award_medals
     @finishing_positions.each do |finishing_position|
       case 
       when finishing_position == "1"
