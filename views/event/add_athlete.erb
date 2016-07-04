@@ -4,12 +4,12 @@
 
 
   <label for="name">Athlete: </label>
-  <select name="@event.name">
+  <select name="athlete_id">
 
     <% @athletes.each do |athlete| %>
-    <option value="<%= athlete.id%>"><%= athlete.name %></option>
+    <option value="<%= athlete.id%>"><%= athlete.name %></option> 
     <% end %>
-    <% @event.enter_athletes(athlete) %> 
+
   </select>
 
   <br>

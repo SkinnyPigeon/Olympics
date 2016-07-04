@@ -39,6 +39,13 @@ get '/event/:id/add_athlete' do
   erb( :'event/add_athlete')
 end
 
+#save athlete
+post '/event/:id/add_athlete' do
+  event = Event.find(params[:id])
+  athlete = Athlete.find(params[:athlete_id])
+  event.enter_athletes( athlete )
+  redirect to("/event/#{ params[:id] }/add_athlete")
+end
 
 #update
 post '/event/:id' do
