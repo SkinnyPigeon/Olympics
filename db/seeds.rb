@@ -39,10 +39,10 @@ bum_fights.enter_athletes(bob)
 bum_fights.enter_athletes(john)
 
 
-bum_fights.enter_athletes(gengis)
-bum_fights.enter_athletes(kahn)
-bum_fights.enter_athletes(jeffy)
-bum_fights.enter_athletes(john)
+knifing.enter_athletes(gengis)
+knifing.enter_athletes(kahn)
+knifing.enter_athletes(jeffy)
+knifing.enter_athletes(john)
 
 guns.enter_athletes(jeffy)
 guns.enter_athletes(kahn)
