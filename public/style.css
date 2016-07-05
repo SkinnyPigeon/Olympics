@@ -130,6 +130,15 @@ a {
   clear: none; 
 }
 
+.bums{
+  color: white;
+  font-size: 5em;
+  text-align: center;
+  padding-top: 20px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 /*colours:  #D09E88 - light brown
             #FADAD8 - pinkish
             #534847 - darkest brown
