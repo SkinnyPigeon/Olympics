@@ -1,9 +1,20 @@
 <div class="info">
-  <h1>Nation</h1>
-  <%=@nation.name%> 
-  <br>
-  <br>>
-  <a href="/nation/new">Add Another Nation</a>
-  <a href="/nation">Nation Index</a>
-  <a href="/nation/<%=@nation.id%>/edit">Edit Nation</a>
-</div>
+  <div class="left">
+    <h1>Nation</h1>
+    <%=@nation.name%> 
+    <br>
+    <br>
+
+  </div>
+
+  <div class="right">
+    <h1>Athletes: </h1>
+    <% @nation.athletes.each do |athlete| %>
+    <%= athlete.name %>
+    <br>
+    <% end %>
+  </div>
+  <div class="left">
+    <a href="/nation/<%=@nation.id%>/edit">Edit Nation</a>
+  </div>
+</div>  

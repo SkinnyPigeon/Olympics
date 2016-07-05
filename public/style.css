@@ -139,6 +139,13 @@ a {
   margin-bottom: 0;
 }
 
+.foot-img {
+  margin-top: 60px;
+  width: 110%;
+
+  position: relative;
+  top: 0.7em;
+}
 /*colours:  #D09E88 - light brown
             #FADAD8 - pinkish
             #534847 - darkest brown
