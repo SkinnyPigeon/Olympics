@@ -6,8 +6,9 @@
   <title>Bum Olympics</title>
 </head>
 <body>
-  <%=yield%>
-  <header>
+  <div class="menu">
+    <img class="header-img" src="/images/Bum Wars.png" alt="Bum Wars">
+
     <ul>
       <li class="dropdown"> <a href="/athlete" class="dropbtn">Athletes</a> 
         <div class="dropdown-content">
@@ -27,7 +28,10 @@
     
     <li> <a href="/leaderboard">Leaderboard</a>  </li>
   </ul>
-</header>
+</div> 
+
+<%=yield%>
+
 </body>
 <footer></footer>
 </html>
