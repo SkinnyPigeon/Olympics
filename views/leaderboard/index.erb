@@ -1,17 +1,19 @@
-<h1>Leaderboard</h1>
+<div class="info">
+  <h1>Leaderboard</h1>
 
 
-<div class="scores">
-  <div id="teams">
-    <% @teams.each do |team| %>
-    <%= team %> <br>
-    <% end %>
-  </div>
+  <div class="scores">
+    <div id="teams">
+      <% @teams.each do |team| %>
+      <%= team %> <br>
+      <% end %>
+    </div>
 
 
-  <div id="scores">
-    <% @scores.each do |score| %>
-    <%= score  %> <br>
-    <% end %>
+    <div id="scores">
+      <% @scores.each do |score| %>
+      <%= score  %> <br>
+      <% end %>
+    </div>
   </div>
 </div>

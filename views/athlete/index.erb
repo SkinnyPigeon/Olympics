@@ -1,15 +1,16 @@
-<h1>Athletes</h1>
+<div class="info">
+  <h1>Athletes</h1>
 
-<% @athletes.each do |athlete| %>
-<a href="/athlete/<%= athlete.id%>"><%= athlete.name %>
-</a>
-<br>
-<hr>
-<% end %>
-<
-<a href="/athlete/new">Add a new athlete</a>
-<a href="/athlete">Athlete Index</a>
-<a href="/event">Event Index</a>
-<a href="/nation">Nation Index</a>
-<a href="/leaderboard">Leaderboard</a>
-
+  <% @athletes.each do |athlete| %>
+  <a href="/athlete/<%= athlete.id%>"><%= athlete.name %>
+  </a>
+  <br>
+  <hr>
+  <% end %>
+  <
+  <a href="/athlete/new">Add a new athlete</a>
+  <a href="/athlete">Athlete Index</a>
+  <a href="/event">Event Index</a>
+  <a href="/nation">Nation Index</a>
+  <a href="/leaderboard">Leaderboard</a>
+</div>

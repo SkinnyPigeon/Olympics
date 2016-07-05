@@ -1,15 +1,16 @@
-<h1>Events</h1>
+<div class="info">
+  <h1>Events</h1>
 
-<% @events.each do |event| %>
+  <% @events.each do |event| %>
   <a href="/event/<%= event.id%>"><%= event.name %>
   </a>
   <hr>
-<% end %>
-<br>
+  <% end %>
+  <br>
 
-<a href="/event/new">Add a new event</a>
-<a href="/athlete">Athlete Index</a>
-<a href="/event">Event Index</a>
-<a href="/nation">Nation Index</a>
-<a href="/leaderboard">Leaderboard</a>
-
+  <a href="/event/new">Add a new event</a>
+  <a href="/athlete">Athlete Index</a>
+  <a href="/event">Event Index</a>
+  <a href="/nation">Nation Index</a>
+  <a href="/leaderboard">Leaderboard</a>
+</div>

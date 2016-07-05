@@ -1,13 +1,14 @@
-<h1>Nations</h1>
+<div class="info">
+  <h1>Nations</h1>
 
-<% @nations.each do |nation| %>
+  <% @nations.each do |nation| %>
   <a href="/nation/<%= nation.id%>"><%= nation.name %></a><br><hr>
-<% end %>
+  <% end %>
 
-<br>
-<a href="/nation/new">Add a new nation</a>
-<a href="/athlete">Athlete Index</a>
-<a href="/event">Event Index</a>
-<a href="/nation">Nation Index</a>
-<a href="/leaderboard">Leaderboard</a>
-
+  <br>
+  <a href="/nation/new">Add a new nation</a>
+  <a href="/athlete">Athlete Index</a>
+  <a href="/event">Event Index</a>
+  <a href="/nation">Nation Index</a>
+  <a href="/leaderboard">Leaderboard</a>
+</div>
