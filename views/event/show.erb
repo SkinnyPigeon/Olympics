@@ -1,24 +1,28 @@
 <div class="info">
   <div class="left">
-  <h1>Event</h1>
-  <%=@event.name%> 
-  <br>
-  <br>
-</div>
+    <h1>Event</h1>
+    <%=@event.name%> 
+    <br>
+    <br>
+  </div>
 
-<div class="right">
-  <h1>Athletes: </h1>
-  <% @event.athletes.each do |athlete| %>
-  <%= athlete.name %>
-  <br>
-  <%end%>
-</div>
+  <div class="right">
+    <h1>Athletes: </h1>
+    <% @event.athletes.each do |athlete| %>
+    <%= athlete.name %>
+    <br>
+    <%end%>
+  </div>
 
-<form action="/event/<%= @event.id%>/result" method="post">
-  <label for="Run"> Result: </label>
-  <input type="submit" value="Run">
-</form>
+  <div class="left">
+    <form action="/event/<%= @event.id%>/result" method="post">
+      <label for="Run"> Result: </label>
+      <input type="submit" value="Run">
+    </form>
+  </div>
 
-
-<a href="/event/<%=@event.id%>/edit">Edit Event</a>
+  <div class="right">
+    <a href="/event/<%=@event.id%>/edit">Edit Event</a>
+    <a href="/event/<%=@event.id%>/add_athlete">Add Athlete</a>
+  </div>
 </div>
