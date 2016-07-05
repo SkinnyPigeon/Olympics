@@ -20,13 +20,18 @@
       <input type="submit" value="Run">
     </form>
 
+    <div class="left">
+      <form action="/event/<%= @event.id%>/table" method="get">
+        <label for="Run"> Ranking: </label>
+        <input type="submit" value="Run">
+      </form>
+
 
     <div class="right">
       <a href="/event/<%=@event.id%>/edit">Edit Event</a>
     </div>
     <div class="left">
       <a href="/event/<%=@event.id%>/add_athlete">Add Athlete</a>
-
     </div>
   </div>
 

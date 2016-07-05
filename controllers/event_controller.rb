@@ -57,17 +57,12 @@ post '/event/:id/result' do
   redirect to("/leaderboard")
 end
 
-# get '/event/:id/table' do
-#   @event = Event.find(params[:id])
-#   @event.results
-#   @results = @event.athletes
-#   binding.pry
-#   nil
-#   @result = for result in @results
-#     @results.first.name
-#   end
-#   erb(:"/event/table")
-# end
+get '/event/:id/table' do
+  @event = Event.find(params[:id])
+  @event.results
+  @results = @event.ranking
+  erb(:"/event/table")
+end
 
 #update
 post '/event/:id' do
