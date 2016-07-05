@@ -5,4 +5,13 @@
   </div>
   <%=@result%>
 
+  <div class="scores">
+    <div id="teams">
+      <% @results.each do |team| %>
+      <%= team.name %> <br>
+      <% end %>
+    </div>
+
+    </div>
+
 </div>
