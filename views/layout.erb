@@ -7,17 +7,27 @@
 </head>
 <body>
   <%=yield%>
-  <ul>
-    <li class="dropdown"> <a href="/athlete" class="dropbtn">Athlete Index</a> 
-    <div class="dropdown-content">
-        <a href="/athlete/new">Add Athlete</a>
-      </div>  
-
+  <header>
+    <ul>
+      <li class="dropdown"> <a href="/athlete" class="dropbtn">Athletes</a> 
+        <div class="dropdown-content">
+          <a href="/athlete/new">Add Athlete</a>
+        </div>  
+      </li>
+      <li class="dropdown"> <a href="/event" class="dropbtn">Events</a>
+        <div class="dropdown-content">
+         <a href="/event/new">Add Event</a>
+       </div>  
+     </li>
+     <li class="dropdown"> <a href="/nation" class="dropbtn">Nations</a>  
+      <div class="dropdown-content">
+        <a href="/nation/new">Add Nation</a>
+      </div>
     </li>
-    <li> <a href="/event">Event Index</a>  </li>
-    <li> <a href="/nation">Nation Index</a>  </li>
+    
     <li> <a href="/leaderboard">Leaderboard</a>  </li>
   </ul>
+</header>
 </body>
 <footer></footer>
 </html>

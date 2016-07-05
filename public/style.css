@@ -1,4 +1,6 @@
-header {}
+header {
+  position: top;
+}
 
 body {
   font-family: monospace;
@@ -27,8 +29,11 @@ a {
 
 
 ul {
+    position: fixed;
+    top: 0;
+    width: 96.8%;
     list-style-type: none;
-    margin: 0;
+    margin: 0 0 0 0;
     padding: 0;
     overflow: hidden;
     background-color: #534847;
@@ -72,16 +77,16 @@ li.dropdown {
     text-align: left;
 }
 
-.dropdown-content a:hover {background-color: #D09E88}
+.dropdown-content a:hover {background-color: #9B8281}
 
 .dropdown:hover .dropdown-content {
     display: block;
 }
 }
-/*colours:  #D09E88
-            #FADAD8
-            #534847
-            #9B8281
+/*colours:  #D09E88 - light brown
+            #FADAD8 - pinkish
+            #534847 - darkest brown
+            #9B8281 - medium brown
             
 
 
