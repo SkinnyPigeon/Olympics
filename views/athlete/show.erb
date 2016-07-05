@@ -1,11 +1,16 @@
 <div class="info">
-  <h1><%=@athlete.name%> </h1>
-  <h2><%= @athlete.nation.name  %></h2>
-  <h4> Gold: <%= @athlete.gold %></h4>
-  <h4> Silver: <%= @athlete.silver %></h4>
-  <h4> Bronze: <%= @athlete.bronze %></h4>
+  <div class="left">
+    <h1><%=@athlete.name%> </h1>
+    <h2><%= @athlete.nation.name  %></h2>
+  </div>
+
+  <div class="right">
+    <h1>Medals</h1>
+    <h4> Gold: <%= @athlete.gold %></h4>
+    <h4> Silver: <%= @athlete.silver %></h4>
+    <h4> Bronze: <%= @athlete.bronze %></h4>
+  </div>
   <br>
-  <a href="/athlete/new">Add Another Athlete</a>
-  <a href="/athlete">Athlete Index</a>
+
   <a href="/athlete/<%=@athlete.id%>/edit">Edit Athlete</a>
 </div>

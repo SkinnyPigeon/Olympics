@@ -115,7 +115,20 @@ a {
   font-size: 1.5em;
 }
 
+.left{
+  vertical-align: top;
+  display: inline-block;
+  width: 45%;
+  clear: none;
+  margin-bottom: 20%;
+}
 
+.right {
+  vertical-align: top;
+  display: inline-block;
+  width: 45%;
+  clear: none; 
+}
 
 /*colours:  #D09E88 - light brown
             #FADAD8 - pinkish

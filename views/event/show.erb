@@ -1,20 +1,22 @@
 <div class="info">
-  <div class="title"
+  <div class="left">
   <h1>Event</h1>
   <%=@event.name%> 
   <br>
   <br>
 </div>
 
-<h1>Athletes: </h1>
-<% @event.athletes.each do |athlete| %>
-<%= athlete.name %>
-<br>
-<%end%>
+<div class="right">
+  <h1>Athletes: </h1>
+  <% @event.athletes.each do |athlete| %>
+  <%= athlete.name %>
+  <br>
+  <%end%>
+</div>
 
 <form action="/event/<%= @event.id%>/result" method="post">
-  <label for="Update"> Result: </label>
-  <input type="submit" value="Update">
+  <label for="Run"> Result: </label>
+  <input type="submit" value="Run">
 </form>
 
 
