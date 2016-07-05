@@ -20,15 +20,13 @@
       <input type="submit" value="Run">
     </form>
 
-    <form action="/event/<%= @event.id%>/table" method="get">
-      <label for="Run"> Order: </label>
-      <input type="submit" value="Run">
-    </form>
-  </div>
 
-  <div class="right">
-    <a href="/event/<%=@event.id%>/edit">Edit Event</a>
-    <a href="/event/<%=@event.id%>/add_athlete">Add Athlete</a>
+    <div class="right">
+      <a href="/event/<%=@event.id%>/edit">Edit Event</a>
+    </div>
+    <div class="left">
+      <a href="/event/<%=@event.id%>/add_athlete">Add Athlete</a>
+
+    </div>
   </div>
-</div>
 
