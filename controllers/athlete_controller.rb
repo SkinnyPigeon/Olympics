@@ -40,3 +40,10 @@ post '/athlete/:id' do
   @athlete = Athlete.update( params )
   redirect to( "/athlete/#{ params[:id] }")
 end
+
+#delete
+delete '/athlete/:id/delete' do
+  @athlete = Athlete.find( params[:id] )
+  @athlete.delete
+  redirect to (:'athlete/index')
+end
