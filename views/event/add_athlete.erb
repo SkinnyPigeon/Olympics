@@ -1,22 +1,24 @@
-<h2><%= @event.name%></h2>
+<div class="info">
+  <h2><%= @event.name%></h2>
 
-<form action="/event/<%= @event.id%>/add_athlete" method="post">
+  <form action="/event/<%= @event.id%>/add_athlete" method="post">
 
 
-  <label for="name">Athlete: </label>
-  <select name="athlete_id">
+    <label for="name">Athlete: </label>
+    <select name="athlete_id">
 
-    <% @athletes.each do |athlete| %>
-    <option value="<%= athlete.id%>"><%= athlete.name %></option> 
-    <% end %>
+      <% @athletes.each do |athlete| %>
+      <option value="<%= athlete.id%>"><%= athlete.name %></option> 
+      <% end %>
 
-  </select>
+    </select>
 
+    <br>
+    <br>
+
+    <input type='submit' value="Add Athlete!">
+  </form>
   <br>
   <br>
-
-  <input type='submit' value="Add Athlete!">
-</form>
-<br>
-<br>
-<a href="/event">Event Index</a>
+  <a href="/event">Event Index</a>
+</div>
