@@ -1,5 +1,6 @@
 require_relative('../models/athlete')
 require_relative('../models/event')
+require('pry-byebug')
 
 #index
 get '/event' do
@@ -54,6 +55,11 @@ post '/event/:id/result' do
   event.athletes.each { |athlete| athlete.award_medals}
   event.athletes.each { |athlete| athlete.convert_medals}
   redirect to("/leaderboard")
+end
+
+get '/event/:id/table' do
+  @event = Event.find(params[:id])
+  erb(:"/event/table")
 end
 
 #update
