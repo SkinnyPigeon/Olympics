@@ -23,6 +23,11 @@ class Athlete
     return Athlete.map_item( sql )
   end
 
+  # def delete()
+  #   sql = "DELETE * FROM athletes WHERE id = #{ @id}"
+  #   run_sql( sql )
+  # end
+
   def nation()
     sql = "SELECT * FROM nations WHERE id = #{ @nation_id }"
     @nation = Nation.map_item( sql )
