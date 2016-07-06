@@ -73,6 +73,15 @@ class Nation
     run_sql( sql )
   end
 
+  # def self.search( nation )
+  #   result = nation.name
+  #   sql = "SELECT nations.name FROM nations WHERE nations.name LIKE '#{result}' "
+  #   country = Nation.map_item( sql )
+  #   binding.pry
+  #   nil
+  #   return country
+  # end
+
 end
 
 
