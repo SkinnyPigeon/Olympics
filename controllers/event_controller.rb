@@ -59,8 +59,8 @@ end
 
 get '/event/:id/table' do
   @event = Event.find(params[:id])
-  @event.results
-  @results = @event.ranking
+  @event.athlete_positions
+  @results = @event.position
   erb(:"/event/table")
 end
 
