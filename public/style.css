@@ -150,6 +150,10 @@ a {
   position: relative;
   top: 0.7em;
 }
+
+p{
+  padding-right: 20px;
+}
 /*colours:  #D09E88 - light brown
             #FADAD8 - pinkish
             #534847 - darkest brown

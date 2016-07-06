@@ -1,4 +1,5 @@
 require_relative('../models/nation')
+require('pry-byebug')
 
 #index
 get '/nation' do
@@ -35,3 +36,19 @@ post '/nation/:id' do
   @nation = Nation.update( params )
   redirect to( "/nation/#{ params[:id] }")
 end
+
+#search
+# get '/nation/search' do
+#   @nation = Nation.search( params )
+#   binding.pry
+#   nil
+#   erb( :'nation/search')
+# end
+
+
+
+
+
+
+
+

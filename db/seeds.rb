@@ -64,6 +64,7 @@ cross_country_wrestling.enter_athletes(john)
 # john.convert_medals
 
 # board.show_scores
+# Nation.search(spain)
 
 binding.pry
 nil
