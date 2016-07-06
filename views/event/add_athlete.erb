@@ -8,7 +8,9 @@
     <select name="athlete_id">
 
       <% @athletes.each do |athlete| %>
+      <% if not @event.athlete_id.include?(athlete.id) %>
       <option value="<%= athlete.id%>"><%= athlete.name %></option> 
+      <% end %>
       <% end %>
 
     </select>

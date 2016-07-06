@@ -52,6 +52,11 @@ class Event
     @position = results.map{ |result| Athlete.new( result )}
   end
 
+  def athlete_id
+    ids = @athletes.map { |athlete| athlete.id}
+    return ids
+  end
+
   def self.all()
     sql = "SELECT * FROM events"
     return Event.map_items( sql )

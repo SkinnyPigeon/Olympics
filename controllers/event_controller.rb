@@ -38,6 +38,7 @@ end
 get '/event/:id/add_athlete' do
   @athletes = Athlete.all
   @event = Event.find( params[:id] )
+  @event.populate_with_athletes
   erb( :'event/add_athlete')
 end
 
