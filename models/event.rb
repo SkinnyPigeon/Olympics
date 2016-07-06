@@ -4,13 +4,14 @@ require_relative('athlete')
 
 class Event
 
-  attr_reader( :name, :id, :athletes, :ranking )
+  attr_reader( :name, :id, :athletes, :ranking, :position )
 
   def initialize( options )
     @name = options['name']
     @id = options['id'].to_i
     @athletes = []
     @ranking = []
+    @position = 0
   end
 
   def save()
@@ -43,6 +44,17 @@ class Event
       run_sql( sql )
       position -=1
     end
+  end
+
+  def athlete_positions
+    sql = "SELECT athletes.* FROM athletes INNER JOIN athletes_events ON athletes_events.athlete_id = athletes.id WHERE athletes_events.event_id = #{@id} ORDER BY position_id"
+    results = run_sql( sql )
+    @position = results.map{ |result| Athlete.new( result )}
+  end
+
+  def athlete_id
+    ids = @athletes.map { |athlete| athlete.id}
+    return ids
   end
 
   def self.all()

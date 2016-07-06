@@ -38,6 +38,7 @@ end
 get '/event/:id/add_athlete' do
   @athletes = Athlete.all
   @event = Event.find( params[:id] )
+  @event.populate_with_athletes
   erb( :'event/add_athlete')
 end
 
@@ -59,8 +60,8 @@ end
 
 get '/event/:id/table' do
   @event = Event.find(params[:id])
-  @event.results
-  @results = @event.ranking
+  @event.athlete_positions
+  @results = @event.position
   erb(:"/event/table")
 end
 
